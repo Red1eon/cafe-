@@ -33,6 +33,14 @@
     transform: translateX(0);
 }
 
+@media (max-width: 768px) {
+    .reveal-left,
+    .reveal-right {
+        transform: none !important;
+        opacity: 1 !important;
+    }
+}
+
 .reveal-scale {
     opacity: 0;
     transform: scale(0.9);

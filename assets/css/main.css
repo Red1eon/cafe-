@@ -1,5 +1,9 @@
 /* Base Styles */
 
+html, body {
+    overflow-x: hidden;
+}
+
 body {
     font-family: "DM Sans", sans-serif;
     background: radial-gradient(circle at top, rgba(217, 165, 89, 0.06), transparent 18%),
@@ -35,7 +39,7 @@ h1, h2, h3, h4, h5, h6 {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 100dvh;
     pointer-events: none;
     z-index: 50;
     opacity: 0.03;
@@ -133,6 +137,13 @@ button#mobile-menu-btn {
     button#mobile-menu-btn {
         display: grid;
     }
+
+    :root {
+        padding-top: env(safe-area-inset-top);
+        padding-bottom: env(safe-area-inset-bottom);
+        padding-left: env(safe-area-inset-left);
+        padding-right: env(safe-area-inset-right);
+    }
 }
 
 #mobile-menu {
@@ -185,20 +196,40 @@ button#mobile-menu-btn {
     section {
         padding-top: 3.5rem;
         padding-bottom: 3.5rem;
+        overflow-x: hidden;
     }
 
     .hero-bg {
-        min-height: 85vh;
+        min-height: 100svh;
+    }
+
+    .hero-bg {
+        padding-top: 2.5rem;
+        padding-bottom: 2.5rem;
     }
 
     .hero-bg h1 {
-        font-size: 3.5rem;
+        font-size: 2.9rem;
         line-height: 1.05;
     }
 
     .hero-bg p,
     .hero-bg .text-amber {
-        font-size: 1rem;
+        font-size: 0.98rem;
+    }
+
+    .hero-bg .absolute.-bottom-10.-right-10,
+    .hero-bg .absolute.-top-4.-right-4 {
+        display: none;
+    }
+
+    .hero-bg .inline-flex {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .hero-bg .inline-flex > * {
+        width: 100%;
     }
 
     .hero-accent-1,
@@ -208,6 +239,16 @@ button#mobile-menu-btn {
 
     .menu-card {
         border-radius: 24px;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .max-w-7xl {
+        max-width: 100%;
     }
 
     .form-input {
