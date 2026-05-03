@@ -2,7 +2,9 @@
 // MENU - Menu rendering with auto-rotation
 // ========================
 
-const MENU_DISPLAY_COUNT = 4;
+function getMenuDisplayCount() {
+    return window.innerWidth < 768 ? 1 : 4;
+}
 const MENU_ITEMS = [
     {
         name: "Coffee",
@@ -42,7 +44,7 @@ function renderMenu() {
     const delayClasses = ["delay-100", "delay-200", "delay-300", "delay-400"];
     
     const displayItems = menuShowAll ? MENU_ITEMS : (() => {
-        const itemCount = Math.min(MENU_DISPLAY_COUNT, MENU_ITEMS.length);
+        const itemCount = Math.min(getMenuDisplayCount(), MENU_ITEMS.length);
         const items = [];
         for (let i = 0; i < itemCount; i++) {
             const itemIndex = (menuRotationIndex + i) % MENU_ITEMS.length;
@@ -119,7 +121,7 @@ function initMenu() {
             menuViewAllBtn.classList.toggle("text-amber");
             if (menuShowAll) {
                 stopMenuRotation();
-            } else if (menuAutoRotating && MENU_ITEMS.length > MENU_DISPLAY_COUNT) {
+            } else if (menuAutoRotating && MENU_ITEMS.length > getMenuDisplayCount()) {
                 startMenuRotation();
             }
             renderMenu();
@@ -127,19 +129,19 @@ function initMenu() {
     }
 
     menuPrevBtn?.addEventListener("click", () => {
-        if (menuShowAll || MENU_ITEMS.length <= MENU_DISPLAY_COUNT) return;
+        if (menuShowAll || MENU_ITEMS.length <= getMenuDisplayCount()) return;
         menuRotationIndex = (menuRotationIndex - 1 + MENU_ITEMS.length) % MENU_ITEMS.length;
         renderMenu();
     });
 
     menuNextBtn?.addEventListener("click", () => {
-        if (menuShowAll || MENU_ITEMS.length <= MENU_DISPLAY_COUNT) return;
+        if (menuShowAll || MENU_ITEMS.length <= getMenuDisplayCount()) return;
         menuRotationIndex = (menuRotationIndex + 1) % MENU_ITEMS.length;
         renderMenu();
     });
 
     menuAutoRotating = true;
-    if (!menuShowAll && MENU_ITEMS.length > MENU_DISPLAY_COUNT) {
+    if (!menuShowAll && MENU_ITEMS.length > getMenuDisplayCount()) {
         startMenuRotation();
     }
 }

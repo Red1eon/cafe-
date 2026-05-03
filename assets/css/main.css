@@ -71,6 +71,9 @@ h1, h2, h3, h4, h5, h6 {
 /* Image Hover Zoom */
 .img-zoom {
     overflow: hidden;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    background: #0B0F14;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 .img-zoom img {
     transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
@@ -141,6 +144,20 @@ button#mobile-menu-btn {
     box-shadow: 0 22px 65px rgba(0, 0, 0, 0.28);
     padding: 1.25rem 1.25rem 1.5rem;
     z-index: 45;
+}
+
+#mobile-menu.hidden {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: visibility 0s 0.3s, opacity 0.3s ease, transform 0.3s ease;
+}
+
+#mobile-menu:not(.hidden) {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+    transition: visibility 0s 0s, opacity 0.3s ease, transform 0.3s ease;
 }
 
 #mobile-menu a {

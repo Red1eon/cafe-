@@ -2,7 +2,9 @@
 // GALLERY - Gallery rendering with masonry layout
 // ========================
 
-const GALLERY_DISPLAY_COUNT = 4;
+function getGalleryDisplayCount() {
+    return window.innerWidth < 768 ? 1 : 4;
+}
 const GALLERY_ITEMS = [
     {
         src: "assets/images/gallery/extra-virgine-olve-oil.jpg",
@@ -36,7 +38,7 @@ function renderGallery() {
     }
     
     const displayItems = galleryShowAll ? GALLERY_ITEMS : (() => {
-        const itemCount = Math.min(GALLERY_DISPLAY_COUNT, GALLERY_ITEMS.length);
+        const itemCount = Math.min(getGalleryDisplayCount(), GALLERY_ITEMS.length);
         const items = [];
         for (let i = 0; i < itemCount; i++) {
             const itemIndex = (galleryRotationIndex + i) % GALLERY_ITEMS.length;
@@ -48,7 +50,7 @@ function renderGallery() {
     const safe = window.SafeUtils;
     galleryGrid.innerHTML = displayItems.map((item, displayIndex) => {
         return `
-        <div class="img-zoom rounded-sm overflow-hidden reveal-scale ${getGallerySpanClass(displayIndex)}">
+        <div class="img-zoom rounded-sm overflow-hidden reveal-scale cursor-pointer ${getGallerySpanClass(displayIndex)}" onclick="openLightbox('${safe.safeUrl(item.src)}', '${safe.safeText(item.alt)}')">
             <img src="${safe.safeUrl(item.src)}" alt="${safe.safeText(item.alt)}" class="w-full h-full object-cover" data-fallback="${safe.FALLBACK_IMAGE}" />
         </div>`;
     }).join("");
@@ -62,7 +64,7 @@ function renderGallery() {
 }
 
 function startGalleryRotation() {
-    if (!Array.isArray(GALLERY_ITEMS) || GALLERY_ITEMS.length <= GALLERY_DISPLAY_COUNT) return;
+    if (!Array.isArray(GALLERY_ITEMS) || GALLERY_ITEMS.length <= getGalleryDisplayCount()) return;
     if (galleryRotationInterval) clearInterval(galleryRotationInterval);
     galleryRotationInterval = setInterval(() => {
         galleryRotationIndex = (galleryRotationIndex + 1) % GALLERY_ITEMS.length;
@@ -100,7 +102,7 @@ function initGallery() {
             galleryViewAllBtn.classList.toggle("text-amber");
             if (galleryShowAll) {
                 stopGalleryRotation();
-            } else if (galleryAutoRotating && GALLERY_ITEMS.length > GALLERY_DISPLAY_COUNT) {
+            } else if (galleryAutoRotating && GALLERY_ITEMS.length > getGalleryDisplayCount()) {
                 startGalleryRotation();
             }
             renderGallery();
@@ -108,19 +110,19 @@ function initGallery() {
     }
 
     galleryPrevBtn?.addEventListener("click", () => {
-        if (galleryShowAll || GALLERY_ITEMS.length <= GALLERY_DISPLAY_COUNT) return;
+        if (galleryShowAll || GALLERY_ITEMS.length <= getGalleryDisplayCount()) return;
         galleryRotationIndex = (galleryRotationIndex - 1 + GALLERY_ITEMS.length) % GALLERY_ITEMS.length;
         renderGallery();
     });
 
     galleryNextBtn?.addEventListener("click", () => {
-        if (galleryShowAll || GALLERY_ITEMS.length <= GALLERY_DISPLAY_COUNT) return;
+        if (galleryShowAll || GALLERY_ITEMS.length <= getGalleryDisplayCount()) return;
         galleryRotationIndex = (galleryRotationIndex + 1) % GALLERY_ITEMS.length;
         renderGallery();
     });
 
     galleryAutoRotating = true;
-    if (!galleryShowAll && GALLERY_ITEMS.length > GALLERY_DISPLAY_COUNT) {
+    if (!galleryShowAll && GALLERY_ITEMS.length > getGalleryDisplayCount()) {
         startGalleryRotation();
     }
 }

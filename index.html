@@ -131,7 +131,7 @@
                         Est. 2026 - Kathmandu, Nepal
                     </p>
 
-                    <h1 class="text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-cream leading-[0.95] mb-6 opacity-0 animate-fade-in-up delay-200">
+                    <h1 class="text-4xl md:text-6xl lg:text-7xl font-serif font-bold text-cream leading-[0.95] mb-6 opacity-0 animate-fade-in-up delay-200">
                         Where Every Cup<br>
                         <span class="italic text-latte font-normal">Tells a Story</span>
                     </h1>
@@ -210,7 +210,7 @@
                 <div class="reveal-right relative">
                     <div class="relative">
                         <!-- Main Image -->
-                        <div class="rounded-sm aspect-[4/5] relative overflow-hidden shadow-2xl">
+                        <div class="rounded-sm aspect-[3/4] md:aspect-[4/5] relative overflow-hidden shadow-2xl">
                             <img src="assets/images/about/about.JPG" alt="Head roaster preparing fresh coffee beans" class="w-full h-full object-cover">
                             <div class="absolute inset-0 bg-gradient-to-t from-espresso/40 to-transparent"></div>
                             <div class="absolute bottom-8 left-8 right-8">
@@ -254,7 +254,7 @@
             <div class="relative">
                 <button id="menu-prev-btn" class="absolute left-0 top-1/2 z-10 -translate-x-4 -translate-y-1/2 rounded-full border border-white/20 bg-espresso/80 text-cream px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] hover:border-amber hover:text-amber transition-all md:-translate-x-6">Previous</button>
                 <button id="menu-next-btn" class="absolute right-0 top-1/2 z-10 translate-x-4 -translate-y-1/2 rounded-full border border-white/20 bg-espresso/80 text-cream px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] hover:border-amber hover:text-amber transition-all md:translate-x-6">Next</button>
-                <div id="menu-grid" class="grid md:grid-cols-2 lg:grid-cols-4 gap-8"></div>
+                <div id="menu-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"></div>
             </div>
         </div>
     </section>
@@ -354,7 +354,7 @@
             <div class="relative">
                 <button id="gallery-prev-btn" class="absolute left-0 top-1/2 z-10 -translate-x-4 -translate-y-1/2 rounded-full border border-white/20 bg-espresso/80 text-cream px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] hover:border-amber hover:text-amber transition-all md:-translate-x-6">Previous</button>
                 <button id="gallery-next-btn" class="absolute right-0 top-1/2 z-10 translate-x-4 -translate-y-1/2 rounded-full border border-white/20 bg-espresso/80 text-cream px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] hover:border-amber hover:text-amber transition-all md:translate-x-6">Next</button>
-                <div id="gallery-grid" class="grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[200px] md:auto-rows-[250px]"></div>
+                <div id="gallery-grid" class="grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-[120px] md:auto-rows-[250px]"></div>
             </div>
         </div>
     </section>
@@ -531,6 +531,14 @@
 
     <!-- Entry point (loads last) -->
     <script src="assets/js/main.js"></script>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="fixed inset-0 z-50 hidden bg-black/95 flex items-center justify-center p-4">
+        <button id="lightbox-close" onclick="closeLightbox()" class="absolute top-4 right-4 text-white/70 hover:text-white text-4xl font-light transition-colors">&times;</button>
+        <button id="lightbox-prev" onclick="navigateLightbox(-1)" class="absolute left-4 text-white/70 hover:text-white text-5xl transition-colors">&larr;</button>
+        <button id="lightbox-next" onclick="navigateLightbox(1)" class="absolute right-4 text-white/70 hover:text-white text-5xl transition-colors">&rarr;</button>
+        <img id="lightbox-img" src="" alt="" class="max-h-[90vh] max-w-[90vw] object-contain">
+    </div>
 </body>
 </html>
 
