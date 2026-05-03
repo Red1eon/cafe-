@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Third Space | Specialty Coffee</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+    
+    <!-- Built CSS (local Tailwind) -->
+    <link rel="stylesheet" href="assets/css/build.css">
+</head>
+<body class="antialiased">
+
+    <!-- Grain Texture Overlay -->
+    <div class="grain-overlay"></div>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-40 transition-all duration-500 px-6 py-5 lg:px-12 bg-espresso/80 backdrop-blur-xl border-b border-white/5">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#" class="text-2xl lg:text-3xl font-serif font-bold text-cream tracking-wide opacity-0 animate-fade-in">
+                The Third Space
+            </a>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center space-x-10 opacity-0 animate-fade-in delay-200">
+                <a href="#about" class="text-cream/80 hover:text-amber transition-colors duration-300 text-sm tracking-widest uppercase font-medium">About</a>
+                <a href="#menu" class="text-cream/80 hover:text-amber transition-colors duration-300 text-sm tracking-widest uppercase font-medium">Menu</a>
+                <a href="#process" class="text-cream/80 hover:text-amber transition-colors duration-300 text-sm tracking-widest uppercase font-medium">Process</a>
+                <a href="#gallery" class="text-cream/80 hover:text-amber transition-colors duration-300 text-sm tracking-widest uppercase font-medium">Gallery</a>
+                <a href="#contact" class="px-6 py-2.5 border border-amber text-amber hover:bg-amber hover:text-espresso transition-all duration-300 text-sm tracking-widest uppercase font-medium">Visit Us</a>
+            </div>
+            
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden p-3 rounded-2xl border border-white/10 text-cream hover:text-amber transition-colors">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/>
+                </svg>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden mt-6 pb-6 border-t border-white/10 pt-6 bg-espresso/95 backdrop-blur-xl">
+            <div class="flex flex-col space-y-4">
+                <a href="#about" class="text-cream/80 hover:text-amber transition-colors text-sm tracking-widest uppercase">About</a>
+                <a href="#menu" class="text-cream/80 hover:text-amber transition-colors text-sm tracking-widest uppercase">Menu</a>
+                <a href="#process" class="text-cream/80 hover:text-amber transition-colors text-sm tracking-widest uppercase">Process</a>
+                <a href="#gallery" class="text-cream/80 hover:text-amber transition-colors text-sm tracking-widest uppercase">Gallery</a>
+                <a href="#contact" class="text-amber font-medium text-sm tracking-widest uppercase">Visit Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-bg min-h-screen flex items-center relative overflow-hidden">
+        <div class="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-espresso/70 to-transparent pointer-events-none"></div>
+        <div class="relative z-10 max-w-7xl mx-auto px-6 py-20">
+            <div class="grid gap-12 lg:grid-cols-[1.2fr_0.8fr] items-center">
+                <div class="text-center lg:text-left">
+                    <p class="inline-flex items-center justify-center lg:justify-start gap-3 mb-6 text-xs uppercase tracking-[0.35em] text-amber/90 font-semibold opacity-0 animate-fade-in-up delay-100">
+                        Est. 2026 - Kathmandu, Nepal
+                    </p>
+
+                    <h1 class="text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-cream leading-[0.95] mb-6 opacity-0 animate-fade-in-up delay-200">
+                        Where Every Cup<br>
+                        <span class="italic text-latte font-normal">Tells a Story</span>
+                    </h1>
+
+                    <p class="mx-auto lg:mx-0 max-w-2xl text-cream/70 text-base md:text-lg leading-8 mb-10 opacity-0 animate-fade-in-up delay-300">
+                        From single-origin Ethiopian beans to our signature saffron latte, we craft experiences that awaken the senses and warm the soul.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 opacity-0 animate-fade-in-up delay-400">
+                        <a href="#menu" class="inline-flex items-center justify-center gap-3 rounded-full bg-amber px-8 py-4 text-sm font-semibold uppercase tracking-[0.2em] text-espresso shadow-2xl shadow-amber/20 hover:bg-latte transition-all duration-300">
+                            Explore Our Menu
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                            </svg>
+                        </a>
+                        <a href="#contact" class="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 px-7 py-4 text-sm text-cream hover:border-amber hover:text-amber transition-all duration-300">
+                            Visit Us
+                        </a>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div class="rounded-[2rem] border border-white/10 bg-espresso-light p-8 shadow-[0_40px_120px_-60px_rgba(0,0,0,0.75)] opacity-95 backdrop-blur-sm opacity-0 animate-fade-in-up delay-500">
+                        <div class="mb-6 inline-flex items-center gap-3 rounded-full bg-white/5 px-4 py-2 text-xs uppercase tracking-[0.35em] text-amber">
+                            Featured Pour
+                        </div>
+                        <h2 class="text-3xl font-serif font-bold text-cream mb-4">Saffron Latte</h2>
+                        <p class="text-cream/70 mb-6 leading-7">Warm saffron, pistachio milk, and house espresso combine for a silky, fragrant cup that feels like a moment.</p>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="rounded-full bg-white/10 px-4 py-2 text-xs uppercase tracking-[0.25em] text-cream">Handcrafted</span>
+                            <span class="rounded-full bg-white/10 px-4 py-2 text-xs uppercase tracking-[0.25em] text-cream">Seasonal</span>
+                        </div>
+                    </div>
+                    <div class="absolute -bottom-10 -right-10 w-56 h-56 rounded-full bg-amber/10 blur-3xl"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 lg:py-32 bg-cream-dark relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+                <!-- Left: Content -->
+                <div class="reveal-left">
+                    <p class="text-amber tracking-[0.3em] uppercase text-sm mb-6 font-medium">Our Story</p>
+                    
+                    <h2 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-espresso leading-tight mb-8">
+                        Rooted in Passion,<br>
+                        <span class="italic text-amber font-normal">Brewed with Purpose</span>
+                    </h2>
+                    
+                    <div class="space-y-6 text-espresso/70 text-lg leading-relaxed">
+                        <p>
+                            The Third Space began with a simple belief: that coffee is more than caffeine; it's a ritual, a conversation starter, and a bridge between cultures.
+                        </p>
+                        <p>
+                            We partner directly with farmers in Ethiopia, Colombia, and Guatemala, 
+                            ensuring fair wages and sustainable practices. Every bean is roasted in small 
+                            batches on our vintage Probat, allowing us to coax out notes of dark chocolate, 
+                            citrus, and toasted caramel.
+                        </p>
+                    </div>
+                    
+                    <blockquote class="mt-10 pl-8 border-l-4 border-amber">
+                        <p class="text-2xl md:text-3xl font-serif italic text-espresso leading-relaxed">
+                            "Coffee is a language in itself. We simply translate it into something unforgettable."
+                        </p>
+                        <cite class="block mt-4 text-amber font-medium not-italic tracking-wider uppercase text-sm">
+                            - Elena Voss, Head Roaster
+                        </cite>
+                    </blockquote>
+                </div>
+                
+                <!-- Right: Image -->
+                <div class="reveal-right relative">
+                    <div class="relative">
+                        <!-- Main Image -->
+                        <div class="rounded-sm aspect-[4/5] relative overflow-hidden shadow-2xl">
+                            <img src="assets/images/about/about.JPG" alt="Head roaster preparing fresh coffee beans" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-espresso/40 to-transparent"></div>
+                            <div class="absolute bottom-8 left-8 right-8">
+                                <p class="text-cream/80 text-sm tracking-widest uppercase mb-2">Single Origin</p>
+                                <p class="text-cream text-2xl font-serif">Yirgacheffe, Ethiopia</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Floating Accent Card -->
+                        <div class="absolute -bottom-8 -left-8 bg-espresso text-cream p-6 shadow-xl max-w-xs hidden lg:block reveal-scale delay-300">
+                            <p class="text-amber text-4xl font-serif mb-2">12+</p>
+                            <p class="text-sm tracking-wider uppercase text-cream/70">Branchs Nepalwide</p>
+                        </div>
+                        
+                        <!-- Decorative Frame -->
+                        <div class="absolute -top-4 -right-4 w-full h-full border-2 border-amber/30 -z-10"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Highlights -->
+    <section id="menu" class="py-24 lg:py-32 bg-espresso relative">
+        <div class="absolute inset-0 opacity-5">
+            <div class="absolute top-0 left-0 w-full h-full" style="background-image: repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(245,236,215,.1) 35px, rgba(245,236,215,.1) 70px);"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+            <div class="text-center mb-20 reveal">
+                <p class="text-amber tracking-[0.3em] uppercase text-sm mb-6 font-medium">Signature Selections</p>
+                <h2 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-cream">
+                    Crafted for the <span class="italic text-latte font-normal">Connoisseur</span>
+                </h2>
+            </div>
+            
+            <div class="mb-8 flex justify-center">
+                <button id="menu-view-all-btn" class="rounded-full border border-amber text-amber px-5 py-2 text-xs font-semibold uppercase tracking-[0.2em] hover:bg-amber hover:text-espresso transition-all">View All</button>
+            </div>
+            
+            <div class="relative">
+                <button id="menu-prev-btn" class="absolute left-0 top-1/2 z-10 -translate-x-4 -translate-y-1/2 rounded-full border border-white/20 bg-espresso/80 text-cream px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] hover:border-amber hover:text-amber transition-all md:-translate-x-6">Previous</button>
+                <button id="menu-next-btn" class="absolute right-0 top-1/2 z-10 translate-x-4 -translate-y-1/2 rounded-full border border-white/20 bg-espresso/80 text-cream px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] hover:border-amber hover:text-amber transition-all md:translate-x-6">Next</button>
+                <div id="menu-grid" class="grid md:grid-cols-2 lg:grid-cols-4 gap-8"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Process -->
+    <section id="process" class="py-24 lg:py-32 bg-cream-dark relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="text-center mb-20 reveal">
+                <p class="text-amber tracking-[0.3em] uppercase text-sm mb-6 font-medium">From Crop to Cup</p>
+                <h2 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-espresso">
+                    The Art of <span class="italic text-amber font-normal">Perfection</span>
+                </h2>
+            </div>
+            
+            <div class="relative">
+                <!-- Desktop Line -->
+                <div class="hidden lg:block process-line"></div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
+                    <!-- Step 1 -->
+                    <div class="reveal delay-100 text-center relative">
+                        <div class="w-20 h-20 mx-auto bg-espresso rounded-full flex items-center justify-center mb-6 relative z-10 border-4 border-cream shadow-xl">
+                            <svg class="w-8 h-8 text-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                                <h3 class="text-2xl font-serif text-cream mb-3">Source</h3>
+                        <p class="text-cream/60 text-sm leading-relaxed max-w-xs mx-auto">
+                            Direct trade relationships with farms at 1,800+ meters altitude. Hand-picked cherries at peak ripeness.
+                        </p>
+                    </div>
+                    
+                    <!-- Step 2 -->
+                    <div class="reveal delay-200 text-center relative">
+                        <div class="w-20 h-20 mx-auto bg-espresso rounded-full flex items-center justify-center mb-6 relative z-10 border-4 border-cream shadow-xl">
+                            <svg class="w-8 h-8 text-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-serif text-espresso mb-3">Roast</h3>
+                        <p class="text-espresso/60 text-sm leading-relaxed max-w-xs mx-auto">
+                            Small-batch roasting on vintage German equipment. Profiled to highlight origin character - never masked.
+                        </p>
+                    </div>
+                    
+                    <!-- Step 3 -->
+                    <div class="reveal delay-300 text-center relative">
+                        <div class="w-20 h-20 mx-auto bg-espresso rounded-full flex items-center justify-center mb-6 relative z-10 border-4 border-cream shadow-xl">
+                            <svg class="w-8 h-8 text-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-serif text-espresso mb-3">Brew</h3>
+                        <p class="text-espresso/60 text-sm leading-relaxed max-w-xs mx-auto">
+                            Precision extraction with calibrated grinders and filtered water. Temperature-controlled to the degree.
+                        </p>
+                    </div>
+                    
+                    <!-- Step 4 -->
+                    <div class="reveal delay-400 text-center relative">
+                        <div class="w-20 h-20 mx-auto bg-espresso rounded-full flex items-center justify-center mb-6 relative z-10 border-4 border-cream shadow-xl">
+                            <svg class="w-8 h-8 text-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-serif text-espresso mb-3">Serve</h3>
+                        <p class="text-espresso/60 text-sm leading-relaxed max-w-xs mx-auto">
+                            Hand-delivered with care. Every cup is a conversation, every sip an experience worth savoring.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery" class="py-24 lg:py-32 bg-espresso-light relative">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-16 reveal">
+                <div>
+                    <p class="text-amber tracking-[0.3em] uppercase text-sm mb-6 font-medium">The Space</p>
+                    <h2 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-cream">
+                        Moments in <span class="italic text-amber font-normal">Amber</span>
+                    </h2>
+                </div>
+                <p class="text-espresso/60 max-w-md mt-6 md:mt-0 leading-relaxed">
+                    Our cafe is designed to slow you down. Warm woods, exposed brick, and the perpetual aroma of fresh roast.
+                </p>
+            </div>
+            
+            <div class="mb-8 flex flex-col items-center gap-3">
+                <button id="gallery-view-all-btn" class="rounded-full border border-amber text-amber px-5 py-2 text-xs font-semibold uppercase tracking-[0.2em] hover:bg-amber hover:text-espresso transition-all">View All</button>
+            </div>
+            
+            <!-- Masonry Grid -->
+            <div class="relative">
+                <button id="gallery-prev-btn" class="absolute left-0 top-1/2 z-10 -translate-x-4 -translate-y-1/2 rounded-full border border-white/20 bg-espresso/80 text-cream px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] hover:border-amber hover:text-amber transition-all md:-translate-x-6">Previous</button>
+                <button id="gallery-next-btn" class="absolute right-0 top-1/2 z-10 translate-x-4 -translate-y-1/2 rounded-full border border-white/20 bg-espresso/80 text-cream px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] hover:border-amber hover:text-amber transition-all md:translate-x-6">Next</button>
+                <div id="gallery-grid" class="grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[200px] md:auto-rows-[250px]"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-24 lg:py-32 bg-espresso relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-amber/5 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 w-72 h-72 bg-latte/5 rounded-full blur-3xl"></div>
+        
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+            <div class="text-center mb-20 reveal">
+                <p class="text-amber tracking-[0.3em] uppercase text-sm mb-6 font-medium">Testimonials</p>
+                <h2 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-cream">
+                    Words from Our <span class="italic text-latte font-normal">Guests</span>
+                </h2>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Quote 1 -->
+                <div class="bg-espresso-light p-8 lg:p-10 rounded-sm relative reveal delay-100 group hover:bg-espresso-light/80 transition-colors duration-500">
+                    <div class="quote-mark text-6xl text-amber/20 absolute top-4 left-6">"</div>
+                    <p class="text-cream/80 text-lg leading-relaxed mb-8 relative z-10 italic font-serif">
+                        The saffron latte is unlike anything I've ever tasted. It's become my Sunday morning ritual, and the baristas remember my name.
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full warm-gradient-2"></div>
+                        <div>
+                            <p class="text-cream font-medium">Marcus Chen</p>
+                            <p class="text-cream/40 text-sm">Food Critic, Portland Monthly</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Quote 2 -->
+                <div class="bg-espresso-light p-8 lg:p-10 rounded-sm relative reveal delay-200 group hover:bg-espresso-light/80 transition-colors duration-500">
+                    <div class="quote-mark text-6xl text-amber/20 absolute top-4 left-6">"</div>
+                    <p class="text-cream/80 text-lg leading-relaxed mb-8 relative z-10 italic font-serif">
+                        Finally, a cafe that treats coffee with the reverence it deserves. The single-origin Ethiopian pour-over was transcendent.
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full warm-gradient-4"></div>
+                        <div>
+                            <p class="text-cream font-medium">Sarah Whitmore</p>
+                            <p class="text-cream/40 text-sm">Regular Guest</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Quote 3 -->
+                <div class="bg-espresso-light p-8 lg:p-10 rounded-sm relative reveal delay-300 group hover:bg-espresso-light/80 transition-colors duration-500">
+                    <div class="quote-mark text-6xl text-amber/20 absolute top-4 left-6">"</div>
+                    <p class="text-cream/80 text-lg leading-relaxed mb-8 relative z-10 italic font-serif">
+                        The atmosphere is intoxicating - warm, unhurried, and genuinely beautiful. This is what a neighborhood cafe should feel like.
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full warm-gradient-5"></div>
+                        <div>
+                            <p class="text-cream font-medium">David & Ana Rivera</p>
+                            <p class="text-cream/40 text-sm">Local Artists</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact / Visit Us -->
+    <section id="contact" class="py-24 lg:py-32 bg-cream-dark relative">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="grid lg:grid-cols-[1.08fr_0.92fr] gap-14 lg:gap-16 items-start">
+                <!-- Left: Info -->
+                <div class="reveal-left">
+                    <p class="text-amber tracking-[0.3em] uppercase text-sm mb-6 font-medium">Visit Us</p>
+                    <h2 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-espresso leading-tight mb-10">
+                        Come Say <span class="italic text-amber font-normal">Hello</span>
+                    </h2>
+                    
+                    <div class="space-y-8">
+                        <div class="flex items-start gap-6">
+                            <div class="w-12 h-12 bg-espresso rounded-full flex items-center justify-center flex-shrink-0">
+                                <svg class="w-5 h-5 text-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-serif text-espresso mb-1">Location</h4>
+                                <p class="text-espresso/60">The Third Space Cafe<br>Kathmandu 44610<br>Nepal</p>
+                            </div>
+                        </div>
+                        
+                        <div class="map-embed overflow-hidden rounded-3xl border border-white/10 shadow-2xl">
+                            <iframe title="The Third Space Cafe location in Kathmandu" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3531.6471157017895!2d85.3248121!3d27.7281798!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb190262171817%3A0xc0c0875847aabd05!2sThe%20Third%20Space%20Cafe!5e0!3m2!1sen!2snp!4v1777780310114!5m2!1sen!2snp" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                        
+                        <div class="mt-4">
+                            <a href="https://www.google.com/maps/dir/?api=1&destination=27.7281798,85.3248121&travelmode=driving" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 rounded-full bg-amber px-5 py-3 text-sm font-semibold text-espresso hover:bg-latte transition-all duration-300">
+                                Get directions
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                                </svg>
+                            </a>
+                        </div>
+                        
+                    </div>
+                    
+                    <!-- Social -->
+                    <div class="mt-12 flex gap-4">
+                        <a href="#" class="w-12 h-12 border border-espresso/20 rounded-full flex items-center justify-center text-espresso hover:bg-espresso hover:text-cream transition-all duration-300">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
+                        </a>
+                        <a href="#" class="w-12 h-12 border border-espresso/20 rounded-full flex items-center justify-center text-espresso hover:bg-espresso hover:text-cream transition-all duration-300">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Right: Form -->
+                <div class="reveal-right lg:sticky lg:top-24">
+                    <div class="bg-espresso p-8 lg:p-12 rounded-sm shadow-2xl">
+                        <h3 class="text-2xl font-serif text-cream mb-2">Contact Us</h3>
+                        <p class="text-cream/50 mb-8 text-sm">For inquiries, message us directly on WhatsApp or Instagram.</p>
+
+                        <div class="space-y-4">
+                            <a href="https://wa.me/9779800000000" target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center rounded-full bg-amber px-5 py-4 text-sm font-semibold uppercase tracking-[0.2em] text-espresso hover:bg-latte transition-all duration-300">
+                                Chat on WhatsApp
+                            </a>
+                            <a href="https://instagram.com/thethirdspacecafe" target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center rounded-full border border-cream/20 px-5 py-4 text-sm font-semibold uppercase tracking-[0.2em] text-cream hover:border-amber hover:text-amber transition-all duration-300">
+                                Message on Instagram
+                            </a>
+                        </div>
+
+                        <div class="mt-8 space-y-5 border-t border-white/10 pt-6 text-cream/70 text-sm">
+                            <div>
+                                <p class="uppercase tracking-[0.2em] text-amber text-xs mb-2">Hours</p>
+                                <p>Mon - Fri: 7:00 AM - 7:00 PM</p>
+                                <p>Sat - Sun: 8:00 AM - 8:00 PM</p>
+                            </div>
+                            <div>
+                                <p class="uppercase tracking-[0.2em] text-amber text-xs mb-2">Contact</p>
+                                <p>hello@thethirdspace.com</p>
+                                <p>(503) 555-0142</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-espresso border-t border-cream/10 py-12">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-2xl font-serif font-bold text-cream tracking-wide">
+                The Third Space
+            </div>
+            <p class="text-cream/40 text-sm">&copy; 2026 The Third Space. Crafted with intention.</p>
+            <div class="flex gap-8 text-sm text-cream/40">
+                <a href="#" class="hover:text-amber transition-colors">Privacy</a>
+                <a href="#" class="hover:text-amber transition-colors">Terms</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <!-- Core (must load first) -->
+    <script src="assets/js/core/safe-utils.js"></script>
+    <script src="assets/js/core/observer.js"></script>
+
+    <!-- Components -->
+    <script src="assets/js/components/navbar.js"></script>
+    <script src="assets/js/components/menu.js"></script>
+    <script src="assets/js/components/gallery.js"></script>
+
+    <!-- Entry point (loads last) -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
+
+

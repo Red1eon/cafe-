@@ -1,0 +1,12 @@
+{
+  "name": "the-third-space",
+  "version": "1.0.0",
+  "description": "Cafe website with local Tailwind build",
+  "scripts": {
+    "build:css": "npx tailwindcss -i ./src/input.css -o ./assets/css/build.css --minify",
+    "watch:css": "npx tailwindcss -i ./src/input.css -o ./assets/css/build.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.0"
+  }
+}
