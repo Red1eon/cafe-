@@ -58,7 +58,7 @@ function renderMenu() {
         return `
         <div class="menu-card bg-espresso-light rounded-sm overflow-hidden group reveal ${delayClasses[index % delayClasses.length]}">
             <div class="aspect-square relative overflow-hidden">
-                <img src="${safe.safeUrl(item.image)}" alt="${safe.safeText(item.name)}" class="w-full h-full object-cover" data-fallback="${safe.FALLBACK_IMAGE}" />
+                <img loading="lazy" src="${safe.safeUrl(item.image)}" alt="${safe.safeText(item.name)}" class="w-full h-full object-cover" data-fallback="${safe.FALLBACK_IMAGE}" />
                 <div class="absolute inset-0 bg-gradient-to-t from-espresso-light via-transparent to-transparent opacity-60"></div>
                 ${item.badge ? `<div class="absolute top-4 right-4 bg-amber text-espresso px-3 py-1 text-xs font-bold tracking-wider uppercase">${safe.safeText(item.badge)}</div>` : ""}
             </div>

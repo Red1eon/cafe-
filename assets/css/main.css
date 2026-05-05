@@ -256,22 +256,17 @@ button#mobile-menu-btn {
     }
 }
 
-/* Hero parallax container */
-.hero-bg {
-    background: linear-gradient(135deg, rgba(7, 10, 16, 0.75) 0%, rgba(17, 24, 39, 0.72) 45%, rgba(7, 10, 16, 0.8) 100%),
-                url("../images/hero/hero.JPG");
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    position: relative;
+/* Image loading optimization */
+img[loading="lazy"] {
+    transition: opacity 0.3s ease-in-out;
 }
 
-.hero-bg::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(circle at 25% 45%, rgba(217, 165, 89, 0.14) 0%, transparent 40%),
-                radial-gradient(circle at 80% 80%, rgba(217, 165, 89, 0.08) 0%, transparent 50%);
+img[loading="lazy"]:not([src]) {
+    opacity: 0;
+}
+
+img[loading="lazy"][src] {
+    opacity: 1;
 }
 
 /* Warm placeholder gradients for images */

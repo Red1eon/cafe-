@@ -51,7 +51,7 @@ function renderGallery() {
     galleryGrid.innerHTML = displayItems.map((item, displayIndex) => {
         return `
         <div class="img-zoom rounded-sm overflow-hidden reveal-scale cursor-pointer ${getGallerySpanClass(displayIndex)}" onclick="openLightbox('${safe.safeUrl(item.src)}', '${safe.safeText(item.alt)}')">
-            <img src="${safe.safeUrl(item.src)}" alt="${safe.safeText(item.alt)}" class="w-full h-full object-cover" data-fallback="${safe.FALLBACK_IMAGE}" />
+            <img loading="lazy" src="${safe.safeUrl(item.src)}" alt="${safe.safeText(item.alt)}" class="w-full h-full object-cover" data-fallback="${safe.FALLBACK_IMAGE}" />
         </div>`;
     }).join("");
     safe.bindImageFallback(galleryGrid);

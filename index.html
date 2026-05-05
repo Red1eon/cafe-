@@ -122,8 +122,11 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero-bg min-h-screen flex items-center relative overflow-hidden">
-        <div class="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-espresso/70 to-transparent pointer-events-none"></div>
+    <section class="min-h-screen flex items-center relative overflow-hidden">
+        <!-- Hero Background Image -->
+        <img src="assets/images/hero/hero.JPG" alt="" class="absolute inset-0 w-full h-full object-cover z-0" />
+        <div class="absolute inset-0 bg-gradient-to-br from-espresso/75 via-espresso/70 to-espresso/80 z-5"></div>
+        <div class="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-espresso/70 to-transparent pointer-events-none z-10"></div>
         <div class="relative z-10 max-w-7xl mx-auto px-6 py-20">
             <div class="grid gap-12 lg:grid-cols-[1.2fr_0.8fr] items-center">
                 <div class="text-center lg:text-left">
@@ -211,7 +214,7 @@
                     <div class="relative">
                         <!-- Main Image -->
                         <div class="rounded-sm aspect-[3/4] md:aspect-[4/5] relative overflow-hidden shadow-2xl">
-                            <img src="assets/images/about/about.JPG" alt="Head roaster preparing fresh coffee beans" class="w-full h-full object-cover">
+                            <img loading="lazy" src="assets/images/about/about.JPG" alt="Head roaster preparing fresh coffee beans" class="w-full h-full object-cover">
                             <div class="absolute inset-0 bg-gradient-to-t from-espresso/40 to-transparent"></div>
                             <div class="absolute bottom-8 left-8 right-8">
                                 <p class="text-cream/80 text-sm tracking-widest uppercase mb-2">Single Origin</p>
@@ -525,12 +528,12 @@
     <script src="assets/js/core/observer.js"></script>
 
     <!-- Components -->
-    <script src="assets/js/components/navbar.js"></script>
-    <script src="assets/js/components/menu.js"></script>
-    <script src="assets/js/components/gallery.js"></script>
+    <script defer src="assets/js/components/navbar.js"></script>
+    <script defer src="assets/js/components/menu.js"></script>
+    <script defer src="assets/js/components/gallery.js"></script>
 
     <!-- Entry point (loads last) -->
-    <script src="assets/js/main.js"></script>
+    <script defer src="assets/js/main.js"></script>
 
     <!-- Lightbox Modal -->
     <div id="lightbox" class="fixed inset-0 z-50 hidden bg-black/95 flex items-center justify-center p-4">
